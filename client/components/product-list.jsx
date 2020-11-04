@@ -29,7 +29,7 @@ export default class ProductList extends React.Component {
 
   render() {
     return (
-      <ProductListItem products={ this.state.products }/>
+      <ProductListItem products={ this.state.products } setView={this.props.setView}/>
 
     );
   }
