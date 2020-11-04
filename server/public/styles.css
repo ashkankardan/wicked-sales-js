@@ -54,3 +54,40 @@ body {
   font-weight: bold;
   margin-top: 20px;
 }
+
+
+.product-details {
+
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid black;
+  padding: 50px;
+
+}
+
+
+.dt-image {
+  margin-top: 20px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover
+
+}
+
+.dt-info {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 40%;
+}
+
+.dt-short-description {
+  margin-top: 10px;
+}
+
+.dt-price {
+  color: gray;
+}
+
+.dt-description {
+  margin-top: 20px;
+}

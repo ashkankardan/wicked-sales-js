@@ -2,7 +2,7 @@ import React from 'react';
 
 function Product(props) {
   return (
-    <div className={ 'col-4 product-card' }>
+    <div onClick={ () => props.setView('details', props.product) } className={ 'col-4 product-card' }>
       <img className={ 'product-image' } src={props.product.image} alt={props.product.name}/>
       <div className={ 'product-title' }>
         <p>{props.product.name}</p>
@@ -22,7 +22,7 @@ export default function ProductListItem(props) {
     <div className={ 'container row' }>
       {
         props.products.map(product => {
-          return <Product key={product.productId} product={product} />;
+          return <Product key={product.productId} product={product} setView={ props.setView } />;
         })
 
       }
