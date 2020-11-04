@@ -161,7 +161,8 @@ app.post('/api/cart', (req, res, next) => {
           res.status(201).json(result.rows[0]);
         });
 
-    });
+    })
+    .catch(err => next(err));
 });
 
 app.use('/api', (req, res, next) => {
