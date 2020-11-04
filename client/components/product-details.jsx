@@ -30,7 +30,7 @@ export default class ProductDetails extends React.Component {
     return this.state.product
 
       ? <div className={ 'product-details' }>
-        <div onClick={ () => this.props.setView() } className="back-arrow"> {<i className="fas fa-arrow-left"></i>} Back to catalog</div>
+        <div onClick={ () => this.props.setView('catalog', null) } className="back-arrow"> {<i className="fas fa-arrow-left"></i>} Back to catalog</div>
         <div className="dt-top row">
           <img className="dt-image" src={this.state.product.image} alt={this.state.product.name}/>
           <div className="dt-info">

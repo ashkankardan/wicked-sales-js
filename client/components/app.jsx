@@ -18,21 +18,12 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
   }
 
-  setView(params) {
-    let view;
-    if (this.state.view.name === 'catalog') {
-      view = {
-        name: 'details',
-        params: { productId: params.productId }
-      };
-      this.setState({ view });
-    } else {
-      view = {
-        name: 'catalog',
-        params: null
-      };
-      this.setState({ view });
-    }
+  setView(name, params) {
+    const view = {
+      name: name,
+      params: params
+    };
+    this.setState({ view });
   }
 
   componentDidMount() {

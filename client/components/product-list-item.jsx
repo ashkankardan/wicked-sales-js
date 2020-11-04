@@ -2,7 +2,7 @@ import React from 'react';
 
 function Product(props) {
   return (
-    <div onClick={ () => props.setView(props.product) } className={ 'col-4 product-card' }>
+    <div onClick={ () => props.setView('details', props.product) } className={ 'col-4 product-card' }>
       <img className={ 'product-image' } src={props.product.image} alt={props.product.name}/>
       <div className={ 'product-title' }>
         <p>{props.product.name}</p>
