@@ -5,6 +5,8 @@ body {
 .header {
   background-color: rgb(52,58,64);
   padding: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
 }
 
@@ -16,11 +18,11 @@ body {
 
 .store-logo {
   display: inline;
-  margin-left: 5%;
 }
 
 .store-name {
   margin-left: 5px;
+  display: inline;
 }
 
 .container {
@@ -90,4 +92,25 @@ body {
 
 .dt-description {
   margin-top: 20px;
+}
+
+.fa-shopping-cart {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.cart-icon {
+  margin-left: 5px;
+}
+
+.cart-item-count {
+  color: white;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.add-btn {
+  margin-top: 10px;
 }
