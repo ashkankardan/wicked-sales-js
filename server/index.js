@@ -166,7 +166,7 @@ app.post('/api/cart', (req, res, next) => {
 
 app.post('/api/orders', (req, res, next) => {
 
-  let sessionCartId = req.session.cartId;
+  const sessionCartId = req.session.cartId;
   const paymentName = req.body.name;
   const paymentCreditCard = req.body.creditCard;
   const paymentShippingAddress = req.body.shippingAddress;
@@ -193,14 +193,8 @@ app.post('/api/orders', (req, res, next) => {
 
     db.query(insert, values)
       .then(result => {
-        if (result.rows[0]) {
-          sessionCartId = null;
-          res.status(201).json(result.rows[0]);
-        } else {
-          res.status(500).json({
-            error: 'an unexpected error occurred'
-          });
-        }
+        delete req.session.cartId;
+        res.status(201).json(result.rows[0]);
       })
       .catch(err => console.error(err));
   }
