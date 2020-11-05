@@ -24,7 +24,7 @@ export default function Header(props) {
         </div>
       </div>
       <div className="header-right col-6">
-        <div className="cart-item-count">
+        <div className="cart-item-count" onClick={() => props.setView('cart', null)} >
           <CartCount />
           <i className="cart-icon fas fa-shopping-cart"></i>
         </div>
