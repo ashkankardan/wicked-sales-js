@@ -54,9 +54,9 @@ app.get('/api/products/:productId', (req, res, next) => {
 });
 
 app.get('/api/cart', (req, res, next) => {
-
   if (!req.session.cartId) {
     res.status(200).json([]);
+
   } else {
 
     const sql = `
@@ -141,7 +141,6 @@ app.post('/api/cart', (req, res, next) => {
 
     })
     .then(cartItemIdObj => {
-
       const sql = `
         select "c"."cartItemId",
               "c"."price",
@@ -163,6 +162,42 @@ app.post('/api/cart', (req, res, next) => {
 
     })
     .catch(err => next(err));
+});
+
+app.post('/api/orders', (req, res, next) => {
+
+  const sessionCartId = req.session.cartId;
+  const paymentName = req.body.name;
+  const paymentCreditCard = req.body.creditCard;
+  const paymentShippingAddress = req.body.shippingAddress;
+
+  if (!req.session.cartId) {
+    return res.status(400).json({
+      error: 'no session cartId found!'
+    });
+  }
+
+  if (!paymentName || !paymentCreditCard || !paymentShippingAddress) {
+    res.status(402).json({
+      error: 'payment information required!'
+    });
+  } else {
+
+    const insert = `
+      insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+      values ($1, $2, $3, $4)
+      returning *
+    `;
+
+    const values = [sessionCartId, paymentName, paymentCreditCard, paymentShippingAddress];
+
+    db.query(insert, values)
+      .then(result => {
+        delete req.session.cartId;
+        res.status(201).json(result.rows[0]);
+      })
+      .catch(err => console.error(err));
+  }
 });
 
 app.use('/api', (req, res, next) => {
