@@ -107,7 +107,7 @@ body {
   color: white;
 }
 
-.header-right {
+.header-right, .checkout-btn, .order-btn {
   text-align: right;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 
-.cart-items-container {
+.cart-items-container, .checkout-form{
   width: 90%;
   margin: 20px auto;
   padding: 50px;
@@ -150,4 +150,22 @@ body {
 .card-row-right {
   width: 50%;
   margin-top: 0;
+}
+
+.checkout-form {
+  width: ;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.bottom-row {
+  margin-top: 20px;
 }
