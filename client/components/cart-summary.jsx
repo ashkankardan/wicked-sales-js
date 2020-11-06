@@ -33,7 +33,11 @@ export default function CartSummary(props) {
           }
 
         </div>
-        <div className="cart-total">{ `Item Total $${cartTotalStr}` }</div>
+
+        <div className="bottom-row row">
+          <div className="cart-total col-6">{ `Item Total $${cartTotalStr}` }</div>
+          <div onClick={ () => props.setView('checkout', null) } className="checkout-btn col-6"><button type="button" className="btn btn-primary">Checkout</button></div>
+        </div>
 
       </div>
     );
