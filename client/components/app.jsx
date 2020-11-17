@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
@@ -115,6 +116,7 @@ export default class App extends React.Component {
         : <div>
           <Header cartItemCount={ this.state.cart.length } setView={this.setView} />
           {viewEl}
+          <Footer />
         </div>
     );
   }
