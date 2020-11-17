@@ -1,3 +1,4 @@
+
 body {
   background-color: white;
 }
@@ -7,7 +8,6 @@ body {
   padding: 10px;
   padding-left: 5%;
   padding-right: 5%;
-  display: flex;
 }
 
 .footer {
@@ -41,13 +41,12 @@ body {
   display: inline;
 }
 
-.container {
+/* .container {
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-}
+} */
 
 .product-card {
   margin-top: 5px;
@@ -172,9 +171,7 @@ body {
   margin-top: 0;
 }
 
-.checkout-form {
-  width: ;
-}
+
 
 .form-label {
   display: block;

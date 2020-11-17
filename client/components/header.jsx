@@ -16,9 +16,7 @@ export default function Header(props) {
     <div className={ 'header row' }>
       <div className="header-left col-6">
 
-        <div>
-          <img className={ 'store-logo' }src="./images/the-picks-logo.png" alt="the picks logo"/>
-        </div>
+        <img className={ 'store-logo' }src="./images/the-picks-logo.png" alt="the picks logo"/>
         <div className={ 'store-name' }>
           The Picks
         </div>
