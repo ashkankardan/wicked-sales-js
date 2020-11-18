@@ -35,18 +35,18 @@ export default class CheckoutForm extends React.Component {
           <div className="cart-heading"><h2>My Cart</h2></div>
 
           <label className="form-label" htmlFor="name">Name</label>
-          <input value={ this.state.event } onChange={ this.handleChange } className="form-input" type="text" name="name" id="name" />
+          <input required value={ this.state.event } onChange={ this.handleChange } className="form-input" type="text" name="name" id="name" />
 
           <label className="form-label" htmlFor="creditCard">Credit Card</label>
-          <input value={ this.state.event } onChange={ this.handleChange } className="form-input" type="text" name="creditCard" id="creditCard" />
+          <input required value={ this.state.event } onChange={ this.handleChange } className="form-input" type="text" name="creditCard" id="creditCard" />
 
           <label className="form-label" htmlFor="shippingAddress">Shipping Address</label>
-          <textarea value={ this.state.event } onChange={ this.handleChange } className="form-input" name="shippingAddress" id="shippingAddress" cols="30" rows="10"></textarea>
+          <textarea required value={ this.state.event } onChange={ this.handleChange } className="form-input" name="shippingAddress" id="shippingAddress" cols="30" rows="10"></textarea>
           <div className="bottom-row row">
 
             <div onClick={ () => this.props.setView('catalog', null) } className="back-arrow col-6"> {<i className="fas fa-arrow-left"></i>} Continue Shopping</div>
 
-            <div className="order-btn col-6"><button type="submit" className="btn btn-primary">Place Order</button></div>
+            <div className="order-btn col-6"><button type="submit" className="btn">Place Order</button></div>
           </div>
 
         </form>

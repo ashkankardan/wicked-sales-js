@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from './header';
-import Footer from './footer';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import Modal from './modal';
+import Footer from './footer';
+import Banner from './banner';
+import Spinner from './spinner';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,12 +19,28 @@ export default class App extends React.Component {
         name: 'catalog',
         params: {}
       },
-      cart: []
+      cart: [],
+      catalogModal: true,
+      checkoutModal: true
     };
 
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.hideCatalogModal = this.hideCatalogModal.bind(this);
+    this.hideCheckoutModal = this.hideCheckoutModal.bind(this);
+  }
+
+  hideCatalogModal() {
+    this.setState({
+      catalogModal: false
+    });
+  }
+
+  hideCheckoutModal() {
+    this.setState({
+      checkoutModal: false
+    });
   }
 
   getCartItems() {
@@ -101,22 +120,51 @@ export default class App extends React.Component {
     let viewEl;
 
     if (this.state.view.name === 'catalog') {
-      viewEl = <ProductList setView={this.setView}/>;
+      if (this.state.catalogModal) {
+        viewEl =
+        <div className="main">
+          <Banner />
+          <Modal hideCatalogModal={this.hideCatalogModal} view={this.state.view.name}/>
+        </div>;
+      } else {
+        viewEl =
+        <div className="main">
+          <Banner />
+          <ProductList setView={this.setView}/>
+        </div>;
+      }
     } else if (this.state.view.name === 'details') {
-      viewEl = <ProductDetails addToCart={ this.addToCart } params={this.state.view.params} setView={this.setView} />;
+      viewEl =
+      <div className="main">
+        <ProductDetails addToCart={ this.addToCart } params={this.state.view.params} setView={this.setView} />;
+      </div>;
     } else if (this.state.view.name === 'cart') {
-      viewEl = <CartSummary cartItemsArr={this.state.cart} setView={this.setView} />;
+      viewEl =
+      <div className="main">
+        <CartSummary cartItemsArr={this.state.cart} setView={this.setView} />;
+      </div>;
     } else if (this.state.view.name === 'checkout') {
-      viewEl = <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />;
+
+      if (this.state.checkoutModal) {
+        viewEl = <div className="main">
+          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />;
+          <Modal hideCheckoutModal={this.hideCheckoutModal} view={this.state.view.name}/>
+        </div>;
+      } else {
+        viewEl = <div className="main">
+          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />;
+        </div>;
+      }
     }
 
     return (
       this.state.isLoading
-        ? <h1>Testing connections...</h1>
+        ? <Spinner />
         : <div>
           <Header cartItemCount={ this.state.cart.length } setView={this.setView} />
           {viewEl}
           <Footer />
+
         </div>
     );
   }

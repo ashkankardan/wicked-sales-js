@@ -39,7 +39,7 @@ export default class ProductDetails extends React.Component {
               <FormatedPrice />
             </div>
             <div className="dt-short-description">{this.state.product.shortDescription}</div>
-            <div onClick={ () => this.props.addToCart(this.state.product) } className="add-btn"><button type="button" className="btn btn-primary">Add to Cart</button></div>
+            <div onClick={ () => this.props.addToCart(this.state.product) } className="add-btn"><button type="button" className="btn">Add to Cart</button></div>
           </div>
         </div>
         <div className="dt-description">{this.state.product.longDescription}</div>

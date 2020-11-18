@@ -29,12 +29,11 @@ function Product(props) {
 
 export default function ProductListItem(props) {
   return (
-    <div className={ 'product-container row' }>
+    <div className={ 'container product-container row' }>
       {
         props.products.map(product => {
           return <Product key={product.productId} product={product} setView={ props.setView } />;
         })
-
       }
     </div>
   );

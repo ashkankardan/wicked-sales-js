@@ -20,7 +20,6 @@ export default class ProductList extends React.Component {
         });
       })
       .catch(err => console.error(err));
-
   }
 
   componentDidMount() {
@@ -33,5 +32,4 @@ export default class ProductList extends React.Component {
 
     );
   }
-
 }
