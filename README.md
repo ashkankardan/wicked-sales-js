@@ -1,6 +1,6 @@
 # wicked-sales-js | "The Picks"
 
-An interactive full stack shopping cart application built with Node.js &amp; React, simulating a signature guitar picks ecommerce site
+An interactive full-stack mobile responsive Node.js and React shopping cart application simulating a signature guitar picks eCommerce site.
 
 ## Technologies Used
 
