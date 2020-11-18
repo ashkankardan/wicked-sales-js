@@ -1,6 +1,6 @@
-# The Picks
+# wicked-sales-js | "The Picks"
 
-An interactive full stack shopping cart application built with Node.js &amp; React, simulating a signature guitar pick ecommerce site
+An interactive full stack shopping cart application built with Node.js &amp; React, simulating a signature guitar picks ecommerce site
 
 ## Technologies Used
 
@@ -40,7 +40,7 @@ Try the application live at [https://thepicks.ashkankardan.net/](https://thepick
 1. Clone the repository.
 
     ```shell
-    git clone https://github.com/ashkankardan/the-picks.git
+    git clone https://github.com/ashkankardan/wicked-sales-js.git
     cd the-picks
     ```
 2. Install all dependencies with npm.
