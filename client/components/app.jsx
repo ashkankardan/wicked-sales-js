@@ -136,23 +136,23 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'details') {
       viewEl =
       <div className="main">
-        <ProductDetails addToCart={ this.addToCart } params={this.state.view.params} setView={this.setView} />;
+        <ProductDetails addToCart={ this.addToCart } params={this.state.view.params} setView={this.setView} />
       </div>;
     } else if (this.state.view.name === 'cart') {
       viewEl =
       <div className="main">
-        <CartSummary cartItemsArr={this.state.cart} setView={this.setView} />;
+        <CartSummary cartItemsArr={this.state.cart} setView={this.setView} />
       </div>;
     } else if (this.state.view.name === 'checkout') {
 
       if (this.state.checkoutModal) {
         viewEl = <div className="main">
-          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />;
+          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />
           <Modal hideCheckoutModal={this.hideCheckoutModal} view={this.state.view.name}/>
         </div>;
       } else {
         viewEl = <div className="main">
-          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />;
+          <CheckoutForm setView={this.setView} placeOrder={this.placeOrder} />
         </div>;
       }
     }
