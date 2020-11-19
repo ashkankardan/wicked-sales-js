@@ -22,9 +22,9 @@ export default function Header(props) {
         </div>
       </div>
       <div className="header-right col-6">
-        <div className="cart-item-count" onClick={() => props.setView('cart', null)} >
-          <CartCount />
-          <i className="cart-icon fas fa-shopping-cart"></i>
+        <div className="header-card-container cart-item-count" onClick={() => props.setView('cart', null)} >
+          <CartCount className="header-card-container" />
+          <i className="header-card-container cart-icon fas fa-shopping-cart"></i>
         </div>
       </div>
     </div>
