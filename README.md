@@ -8,6 +8,7 @@ An interactive full-stack mobile responsive Node.js and React shopping cart appl
 - Node.js
 - Express
 - JavaScript ES6
+- PostgreSQL
 - Bootstrap 4
 - CSS3
 - HTML5
